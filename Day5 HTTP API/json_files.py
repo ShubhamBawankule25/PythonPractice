@@ -23,5 +23,7 @@ print(question)
 pprint.pprint(question)
 
 # from the data which is dictionary returning required info
-# question = dictionary, results = key of type list 
+# question = dictionary, [results] = key (of type list of dictionary), [0] = index of first element in results, [] = key 
 print(question['results'][0]['incorrect_answers'])
+
+
