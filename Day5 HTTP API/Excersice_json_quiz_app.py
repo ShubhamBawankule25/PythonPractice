@@ -18,7 +18,7 @@ while endgame != "quit":
     opt = 1
     r = requests.get(url)
     if r.status_code != 200:
-        endgame = input("Sorry something went wrong, press enter to try again, or type quit to end. ")
+        endgame = input("Sorry something went wrong, press enter to try again, or type quit to end. ").lower()
     else:
         quiz_data = json.loads(r.text)
         # pprint.pprint(quiz_data)
@@ -37,12 +37,17 @@ while endgame != "quit":
         opt += 1
 
     # answer = correct_ans
-    # while data_val == False:
+    while data_val == False:
         guess = input("\nEnter your answer number: ")
-        # try:
-        #     guess = int(guess)
-        # except:
-        #     print("input must be integer between options 1-4")
+        try:
+            guess = int(guess)
+            if guess > len(answers) or guess <= 0:
+                print("invalid answer, input must be integer between options 1-4")
+            else:
+                data_val = True
+        except:
+            print("input must be integer between options 1-4")
+            continue
     guess = answers[int(guess)-1]
 
     if guess == correct_ans:
@@ -57,6 +62,6 @@ while endgame != "quit":
     print("correct answers: " + str(score_correct), "\nincorrect answers: " + str(score_incorrect))
     print("######################################\n")
 
-    endgame = input("Press enter if you want to try another question or  type quit to exit.")
+    endgame = input("Press enter if you want to try another question or  type quit to exit.").lower()
 
 print("\n Thanks for playing.")
