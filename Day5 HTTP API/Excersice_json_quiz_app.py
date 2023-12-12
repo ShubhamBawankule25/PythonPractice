@@ -65,3 +65,6 @@ while endgame != "quit":
     endgame = input("Press enter if you want to try another question or  type quit to exit.").lower()
 
 print("\n Thanks for playing.")
+
+
+fgds
