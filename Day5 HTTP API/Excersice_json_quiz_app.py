@@ -66,5 +66,3 @@ while endgame != "quit":
 
 print("\n Thanks for playing.")
 
-
-fgds
