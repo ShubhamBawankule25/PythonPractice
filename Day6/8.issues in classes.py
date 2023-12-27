@@ -23,5 +23,5 @@ phone1 = Phone("Nokia", "6", -15000)
 
 print(phone1.fullname())
 
-print(phone1.allSpecs()) #<-- without @proprty
+print(phone1.allSpecs()) #<-- without @property
 print(phone1.allSpecs)  #<--- with @property
