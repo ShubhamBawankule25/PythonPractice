@@ -10,7 +10,7 @@ class Date:         # constructor / init method
         return date
     
     @classmethod
-    def detDataFromString(cls, string):
+    def getDataFromString(cls, string):
         import re
         date = re.findall('\d{2}-\d{2}-\d{4} | \d{2}/\d{2}/\d{4}')[0]
         listDate = date.replace('/', '-').split('-')
